@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Game Title 1 - The Pizza Edition</title>
+    <style>
+        body { font-family: sans-serif; background-color: #222; color: #eee; margin: 0; padding: 0; }
+        .header { background-color: #f8c20e; color: #222; text-align: center; padding: 20px; }
+        .header h1 { margin: 0; font-size: 2em; }
+        .container { max-width: 1200px; margin: 20px auto; padding: 0 20px; }
+        .game-section { text-align: center; margin-bottom: 40px; }
+        .game-wrapper { position: relative; width: 100%; max-width: 800px; margin: 0 auto; }
+        .game-iframe { width: 100%; height: 600px; border: none; }
+        .fullscreen-button {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #222;
+            background-color: #f8c20e;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+        .fullscreen-button:hover { background-color: #ffd700; }
+        .other-games { text-align: center; }
+        .other-games h3 { color: #f8c20e; }
+        .other-games ul { list-style: none; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; }
+        .other-games li { margin: 0 10px 10px 0; }
+        .other-games a { text-decoration: none; color: #eee; background-color: #444; padding: 10px 15px; border-radius: 5px; }
+        .other-games a:hover { background-color: #f8c20e; color: #222; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">THE PIZZA EDITION</a></h1>
+    </div>
+
+    <div class="container">
+        <div class="game-section">
+            <h2>Game Title 1</h2>
+            <div class="game-wrapper">
+                <!-- Content of srcdoc has been changed to a simple placeholder -->
+                <iframe id="gameIframe" class="game-iframe" allow="fullscreen" allowfullscreen srcdoc='
+                    <!DOCTYPE html>
+                    <html>
+                    <head>
+                        <style>
+                            body {
+                                font-family: sans-serif;
+                                background-color: #333;
+                                color: #fff;
+                                text-align: center;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+                                height: 100%;
+                                margin: 0;
+                                font-size: 2em;
+                            }
+                        </style>
+                    </head>
+                    <body>
+                        <p>Your game content goes here.</p>
+                    </body>
+                    </html>
+                '></iframe>
+                
+                <!-- Fullscreen Button -->
+                <button id="fullscreenBtn" class="fullscreen-button">Fullscreen</button>
+            </div>
+            <p>Description of Game 1 goes here...</p>
+        </div>
+
+        <div class="other-games">
+            <h3>Other Games You Might Like</h3>
+            <ul>
+                <!-- Link to other game pages -->
+                <li><a href="game1.html">Game Title 1</a></li>
+                <li><a href="game2.html">Game Title 2</a></li>
+                <li><a href="game3.html">Game Title 3</a></li>
+                <!-- Game 5 link has been removed -->
+            </ul>
+            <p><a href="index.html">Back to All Games</a></p>
+        </div>
+    </div>
+
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const gameIframe = document.getElementById('gameIframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameIframe.requestFullscreen) {
+                gameIframe.requestFullscreen();
+            } else if (gameIframe.webkitRequestFullscreen) {
+                gameIframe.webkitRequestFullscreen();
+            } else if (gameIframe.msRequestFullscreen) {
+                gameIframe.msRequestFullscreen();
+            }
+        });
+    </script>
+
+</body>
+</html>

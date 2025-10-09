@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Level Devil - TVEGesd's Games</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1><a href="index.html" style="text-decoration: none; color: inherit;">TVEGesd's Games</a></h1>
+    </div>
+
+    <div class="container">
+        <div class="game-section">
+            <h2>Level Devil</h2>
+            <div class="game-wrapper">
+                <!-- iframe src updated to point to the local game file -->
+                <iframe id="gameIframe" class="game-iframe" allow="fullscreen" allowfullscreen src="games/leveldevil/leveldevil.html"></iframe>
+                <button id="fullscreenBtn" class="fullscreen-button">Fullscreen</button>
+            </div>
+            <p>Level Devil is a hilariously frustrating 2D platformer known for its tricky traps and sudden surprises.</p>
+        </div>
+
+        <div class="other-games">
+            <h3>Other Games You Might Like</h3>
+            <ul>
+                <li><a href="tveg_dogeminer.html">Doge Miner</a></li> 
+                <li><a href="tveg_bitlife.html">Bitlife</a></li>
+            </ul>
+            <p><a href="index.html">Back to All Games</a></p>
+        </div>
+    </div>
+
+    <script>
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const gameIframe = document.getElementById('gameIframe');
+
+        fullscreenBtn.addEventListener('click', () => {
+            if (gameIframe.requestFullscreen) {
+                gameIframe.requestFullscreen();
+            } else if (gameIframe.webkitRequestFullscreen) {
+                gameIframe.webkitRequestFullscreen();
+            } else if (gameIframe.msRequestFullscreen) {
+                gameIframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
