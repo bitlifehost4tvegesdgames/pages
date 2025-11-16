@@ -8,6 +8,82 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Settings Modal -->
+    <div id="settingsModal" class="settings-modal">
+        <div class="settings-content">
+            <div class="settings-header">
+                <h2>⚙️ Settings</h2>
+                <button class="close-settings">&times;</button>
+            </div>
+            
+            <div class="settings-section">
+                <h3>Disguising Settings</h3>
+                <div class="setting-item">
+                    <label>Page Title</label>
+                    <input type="text" id="pageTitle" class="settings-input" placeholder="e.g., Google Classroom">
+                </div>
+                <div class="setting-item">
+                    <label>Favicon URL</label>
+                    <input type="text" id="faviconUrl" class="settings-input" placeholder="e.g., classroom favicon URL">
+                </div>
+                <div class="setting-item">
+                    <label>Custom Background Text</label>
+                    <input type="text" id="bgText" class="settings-input" placeholder="e.g., Study Mode">
+                </div>
+                <button class="apply-button" onclick="applyDisguise()">Apply Disguise</button>
+            </div>
+
+            <div class="settings-section">
+                <h3>Panic Key Settings</h3>
+                <div class="setting-item">
+                    <label>Panic Key</label>
+                    <input type="text" id="panicKey" class="settings-input" placeholder="Press a key..." readonly>
+                    <button class="record-button" onclick="recordPanicKey()">Record Key</button>
+                </div>
+                <div class="setting-item">
+                    <label>Panic Page URL</label>
+                    <input type="text" id="panicUrl" class="settings-input" placeholder="e.g., https://google.com">
+                </div>
+                <button class="apply-button" onclick="applyPanicKey()">Save Panic Key</button>
+            </div>
+
+            <div class="settings-section">
+                <h3>Display Settings</h3>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="darkMode" onchange="toggleDarkMode()"> Dark Mode (Default)
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="soundEnabled"> Enable Sound Effects
+                    </label>
+                </div>
+                <div class="setting-item">
+                    <label>
+                        <input type="checkbox" id="animationsEnabled" checked> Enable Animations
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h3>Reset</h3>
+                <button class="reset-button" onclick="resetAllSettings()">Reset All Settings</button>
+            </div>
+
+            <div class="settings-footer">
+                <button class="close-button" onclick="closeSettings()">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Quick Settings Button (Floating) -->
+    <button id="settingsBtn" class="floating-settings-btn" onclick="openSettings()">⚙️</button>
+
+    <!-- Panic Key Indicator -->
+    <div id="panicIndicator" class="panic-indicator">
+        Panic Key: <span id="panicKeyDisplay">Not Set</span>
+    </div>
 
     <div class="header">
         <h1><a href="index.html" style="text-decoration: none; color: inherit;">TVEGesd's Games</a></h1>
@@ -141,5 +217,6 @@
         </div>
     </div>
 
+    <script src="script.js"></script>
 </body>
 </html>
